@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ppcLookupV2.exe" size="14760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ppcLookupV2.exe" size="16808">
       <assemblyIdentity name="ppcLookupV2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5mAhIWoiqMk6cVgcmNPeyfoRQy4l05kH1hg8/V13R/w=</dsig:DigestValue>
+        <dsig:DigestValue>aBFuLwj4wCg5mPNEVKbtnb4WukAh5T7fk/VPTvwzzqk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

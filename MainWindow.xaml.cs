@@ -101,13 +101,14 @@ namespace ppcLookup
              * null object (ToString()).
             */
             string selectedCounty = countyBox.SelectedItem?.ToString();
+            string selectedState = stateBox.SelectedItem.ToString();
             if (!string.IsNullOrEmpty(selectedCounty))
             {
-                townList_Load(selectedCounty);
+                townList_Load(selectedCounty, selectedState);
             }
         }
 
-        private void townList_Load(string county)
+        private void townList_Load(string county, string state)
         {
             // Same as the state query for the most part until...
             ObservableCollection<string> townTransfer = new ObservableCollection<string>();
@@ -121,7 +122,7 @@ namespace ppcLookup
                 );
             dbConn.Open();
 
-            string getTown = $"select town, code from towns where countyid = '{county}'";
+            string getTown = $"select town, code from towns where countyid = '{county}' and stateid = '{state}'";
             SqlCommand searchTown = new SqlCommand(getTown, dbConn);
 
             SqlDataReader returnTown = searchTown.ExecuteReader();
@@ -190,6 +191,11 @@ namespace ppcLookup
                     townSearch.Add(str);
                 }
             }
+        }
+
+        private void requestEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -24,5 +24,6 @@
         <TextBox x:Name="townFilter" Grid.Column="0" Grid.Row="1" Margin="-20,30,0,0" Width="150" Height="22" IsEnabled="True" TextChanged="townFilter_TextChanged"/>
         <TextBlock x:Name="searchLbl" Grid.Column="0" Grid.Row="1" Margin="20,175,0,0"  HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Search Towns:" VerticalAlignment="Top" Width="136" TextAlignment="Center" FontFamily="Courier" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
         <TextBlock x:Name="instructions" Grid.Column="1" Grid.Row="1" Margin="-33,305,0,-25" Height="20" Width="300" TextAlignment="Center">Click an entry in the list to copy the code</TextBlock>
+        <Button x:Name="requestEdit" Grid.Column="0" Grid.Row="1" Margin="25,160,0,0" HorizontalAlignment="Left" Height="30" Width="130" Click="requestEdit_Click">Send Edit Request</Button>
     </Grid>
 </Window>

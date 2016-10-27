@@ -67,3 +67,5 @@ C:\Users\jmarkman\Documents\ppcLookupV2\bin\Debug\ppcLookupV2.exe.manifest
 C:\Users\jmarkman\Documents\ppcLookupV2\bin\Debug\ppcLookupV2.application
 C:\Users\jmarkman\Documents\ppcLookupV2\obj\Debug\ppcLookupV2.exe.manifest
 C:\Users\jmarkman\Documents\ppcLookupV2\obj\Debug\ppcLookupV2.application
+C:\Users\jmarkman\Documents\ppcLookupV2\obj\Debug\SendEdit.g.cs
+C:\Users\jmarkman\Documents\ppcLookupV2\obj\Debug\SendEdit.baml
