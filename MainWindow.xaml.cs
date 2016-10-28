@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using ppcLookupV2;
 
 namespace ppcLookup
 {
@@ -193,9 +194,10 @@ namespace ppcLookup
             }
         }
 
-        private void requestEdit_Click(object sender, EventArgs e)
+        private void requestEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            SendEdit request = new SendEdit();
+            request.Show();
         }
     }
 }

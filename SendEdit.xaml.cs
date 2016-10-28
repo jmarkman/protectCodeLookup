@@ -22,6 +22,9 @@ namespace ppcLookupV2
         public SendEdit()
         {
             InitializeComponent();
+            request.Items.Add("Add County and Town");
+            request.Items.Add("Add Town");
+            request.Items.Add("Change Code");
         }
     }
 }
