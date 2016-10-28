@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace ppcLookupV2
 {
     /// <summary>
@@ -22,9 +23,14 @@ namespace ppcLookupV2
         public SendEdit()
         {
             InitializeComponent();
-            request.Items.Add("Add County and Town");
+            request.Items.Add("Add New Listing");
             request.Items.Add("Add Town");
             request.Items.Add("Change Code");
+        }
+
+        private void sendRequest_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

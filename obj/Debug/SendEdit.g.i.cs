@@ -56,6 +56,54 @@ namespace ppcLookupV2 {
         #line default
         #line hidden
         
+        
+        #line 30 "..\..\SendEdit.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox stateBox;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 33 "..\..\SendEdit.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox countyBox;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 36 "..\..\SendEdit.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox townBox;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 39 "..\..\SendEdit.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox codeBox;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 41 "..\..\SendEdit.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button sendRequest;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 42 "..\..\SendEdit.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button cancelRequest;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -91,6 +139,30 @@ namespace ppcLookupV2 {
             return;
             case 2:
             this.request = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 3:
+            this.stateBox = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 4:
+            this.countyBox = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 5:
+            this.townBox = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 6:
+            this.codeBox = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 7:
+            this.sendRequest = ((System.Windows.Controls.Button)(target));
+            
+            #line 41 "..\..\SendEdit.xaml"
+            this.sendRequest.Click += new System.Windows.RoutedEventHandler(this.sendRequest_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 8:
+            this.cancelRequest = ((System.Windows.Controls.Button)(target));
             return;
             }
             this._contentLoaded = true;
