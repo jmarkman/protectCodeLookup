@@ -23,13 +23,43 @@ namespace ppcLookupV2
         public SendEdit()
         {
             InitializeComponent();
-            request.Items.Add("Add New Listing");
-            request.Items.Add("Add Town");
-            request.Items.Add("Change Code");
+            requestCbox.Items.Add("Add New Listing");
+            requestCbox.Items.Add("Add Town");
+            requestCbox.Items.Add("Change Code");
         }
 
         private void sendRequest_Click(object sender, RoutedEventArgs e)
         {
+            // request.Text, stateBox.Text, countyBox.Text, townBox.Text, Convert.ToInt32(codeBox.Text)
+            Request edit = new Request();
+
+            if (requestCbox.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select a request type!");
+            }
+            else
+            {
+                try
+                {
+                    edit.Task = requestCbox.Text;
+                    edit.State = stateBox.Text;
+                    edit.County = countyBox.Text;
+                    edit.Town = townBox.Text;
+                    edit.Code = Convert.ToInt32(codeBox.Text);
+
+                    edit.sendRequest();
+                    this.Close();
+                    MessageBox.Show("Request sent successfully!");
+                }
+                catch
+                {
+                    MessageBox.Show("Error!");
+                }
+            }
+
+
+
+            
 
         }
     }
