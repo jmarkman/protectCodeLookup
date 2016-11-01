@@ -31,12 +31,7 @@ namespace ppcLookupV2
         private void sendRequest_Click(object sender, RoutedEventArgs e)
         {
 
-            Request edit = new Request();
-
-
-
-
-                
+            Request edit = new Request();         
 
             try
             {
@@ -53,22 +48,27 @@ namespace ppcLookupV2
             catch
             {
 
-                foreach (char c in codeBox.Text)
-                {
-                    if (char.IsLetter(c))
-                        MessageBox.Show("A letter was input!", "Error");
-                }
-                
-                int checkCode = edit.Code;
-                if (checkCode > 10 || checkCode < 1)
-                    MessageBox.Show("Code is not valid!", "Error");
+                int n;
+                bool isNumeric = int.TryParse(codeBox.Text, out n);
 
                 if (requestCbox.SelectedIndex == -1)
                     MessageBox.Show("You must select a request type!", "Error");
+                else if (string.IsNullOrEmpty(edit.State))
+                    MessageBox.Show("Missing state!", "Error");
+                else if (string.IsNullOrEmpty(edit.County))
+                    MessageBox.Show("Missing county!", "Error");
+                else if (string.IsNullOrEmpty(edit.Town))
+                    MessageBox.Show("Missing town!", "Error");
+                else if (codeBox.Text == "")
+                    MessageBox.Show("No code present!", "Error");
+                else if (isNumeric == false)
+                    MessageBox.Show("A letter was input!", "Error");
+                else if (edit.Code > 10 || edit.Code < 1)
+                    MessageBox.Show("Code is not valid!", "Error");
                 else
                     MessageBox.Show("Error in sending request."
                                + " Please check that all fields"
-                               + " are properly filled out.","Fatal Input Error");
+                               + " are properly filled out.", "Fatal Input Error");
             }
         }
 
