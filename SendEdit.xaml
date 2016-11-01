@@ -39,7 +39,7 @@
         <TextBox x:Name="codeBox" Grid.Column="2" Grid.Row="4" Height="20"></TextBox>
 
         <Button x:Name="sendRequest" Grid.Column="1" Grid.Row="5" Height="30" Width="80" Click="sendRequest_Click">Send</Button>
-        <Button x:Name="cancelRequest" Grid.Column="2" Grid.Row="5" Height="30" Width="80">Cancel</Button>
+        <Button x:Name="cancelRequest" Grid.Column="2" Grid.Row="5" Height="30" Width="80" Click="cancelRequest_Click">Cancel</Button>
 
     </Grid>
 </Window>

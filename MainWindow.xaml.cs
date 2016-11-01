@@ -159,7 +159,7 @@ namespace ppcLookup
              * then went to go change the state or county, would produce
              * a NullReferenceException in the exact manner that the 
              * countyBox_SelectionChanged event did; I repurposed the code
-             * there for a fix  here
+             * there for a fix here
              */
 
             if (output == "0")
@@ -180,15 +180,22 @@ namespace ppcLookup
 
         private void townFilter_TextChanged(object sender, EventArgs e)
         {
+            // For dealing with dynamic data, C# uses the ObservableCollection instead
+            // of a plain old list or array
             ObservableCollection<string> townSearch = new ObservableCollection<string>();
 
+            // Clear the ObservableCollection to make way for the current list of towns
+            // within the list called "townList"
             townSearch.Clear();
             townList.ItemsSource = townSearch;
 
+            // For each item in the list "searchTowns" (in townList_Load)
             foreach (string str in searchTowns)
             {
+                // If the entry starts with whatever is in the textbox, ignoring case
                 if (str.StartsWith(townFilter.Text, StringComparison.CurrentCultureIgnoreCase))
                 {
+                    // add it to the ObservableCollection, "townSearch"
                     townSearch.Add(str);
                 }
             }
@@ -196,8 +203,15 @@ namespace ppcLookup
 
         private void requestEdit_Click(object sender, RoutedEventArgs e)
         {
+            // Not only do I want to have this button open a new window,
+            // I want it to open said window relative towards the center
+            // of the main application window
             SendEdit request = new SendEdit();
-            request.Show();
+            // Set the parent of the SendEdit window (request is-a SendEdit)
+            request.Owner = Application.Current.MainWindow;
+            // Set the SendEdit window to open in the center of its parent
+            request.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            request.Show(); // Open the window
         }
     }
 }
