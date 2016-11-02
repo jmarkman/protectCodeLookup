@@ -21,6 +21,7 @@ namespace ppcLookupV2
         public SendEdit()
         {
             InitializeComponent();
+            // Add user choices to Task Combobox 
             requestCbox.Items.Add("Add New Listing");
             requestCbox.Items.Add("Add Town to Existing County");
             requestCbox.Items.Add("Change Code for Existing Listing");
@@ -28,14 +29,15 @@ namespace ppcLookupV2
 
         private void sendRequest_Click(object sender, RoutedEventArgs e)
         {
+            int n; // Declare var "n" for usage in protectCode TryParse statement
+            Request edit = new Request(); // Instantiate new Request object
+            
 
-            Request edit = new Request();
-            int n;
-
-            edit.Task = requestCbox.Text;
-            edit.State = stateBox.Text;
-            edit.County = countyBox.Text;
-            edit.Town = townBox.Text;
+            edit.Task = requestCbox.Text; // get Task
+            edit.State = stateBox.Text; // get State
+            edit.County = countyBox.Text; // get County
+            edit.Town = townBox.Text; // get Town
+            // get Code and perform exception handling
             bool protectCode = int.TryParse(codeBox.Text, out n);
             if (protectCode)
             {
@@ -45,16 +47,16 @@ namespace ppcLookupV2
             {
                 validateInput();
             }
-            
+            // If green light to proceed
             if (validateInput() == true)
             {
-                edit.sendRequest();
-                this.Close();
+                edit.sendRequest(); // use sendRequest method from Request class
+                this.Close(); // close the window
                 MessageBox.Show("Request sent successfully!");
             }
             else
             {
-                
+                // Throw error in form of message box to end user
                 MessageBox.Show(@"Check your inputs! All fields must be filled!
                   - Task type
                   - State
@@ -77,12 +79,14 @@ namespace ppcLookupV2
             bool codeIsNumeric = int.TryParse(codeBox.Text, out n); // Check if code in box can be parsed to int
             bool codeInRange = false; // var for valid range of codes
 
+            // Populate a list of "numbers" 
             List<string> validCodes = new List<string>();
             for (int i = 1; i < 11; i++)
             {
                 validCodes.Add($"{i}");
             }
 
+            // Check if everything jives in the codeBox and the list of allowed codes
             foreach (string code in validCodes)
             {
                 if (code == codeBox.Text)
@@ -90,8 +94,8 @@ namespace ppcLookupV2
                     codeInRange = true;
                 }
             }
-
-            if (checkTask == true)
+            // Check booleans and return based on conditions
+            if (checkTask == true) // i
                 return false;
             else if (checkState == true)
                 return false;
