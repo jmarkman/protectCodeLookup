@@ -1,17 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 
 namespace ppcLookupV2
@@ -31,7 +20,6 @@ namespace ppcLookupV2
         {
             int n; // Declare var "n" for usage in protectCode TryParse statement
             Request edit = new Request(); // Instantiate new Request object
-            
 
             edit.Task = requestCbox.Text; // get Task
             edit.State = stateBox.Text; // get State
@@ -95,7 +83,7 @@ namespace ppcLookupV2
                 }
             }
             // Check booleans and return based on conditions
-            if (checkTask == true) // i
+            if (checkTask == true)
                 return false;
             else if (checkState == true)
                 return false;
@@ -113,6 +101,7 @@ namespace ppcLookupV2
                 return true;
         }
 
+        // Clicking cancel should just halt the whole shebang
         private void cancelRequest_Click(object sender, RoutedEventArgs e)
         {
             requestCbox.SelectedIndex = -1;
