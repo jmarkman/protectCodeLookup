@@ -49,19 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CnZqE24SkKdaWayJQILPRjGxziuMBpHFYgfcC1k3MCs=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="967168">
-      <assemblyIdentity name="System.Data.SQLite" version="1.0.79.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="x86" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gq7Pm5Bk+6L9CNhZtmmD7WM4vKDjS4gn9kpopHtfLc8=</dsig:DigestValue>
+        <dsig:DigestValue>MdO7F1rm9VjqKI8NOSEghJ3nDKJ1pzY/JlZJFoLlkVI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
